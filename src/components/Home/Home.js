@@ -73,7 +73,7 @@ const Home = () =>  {
                             value={tags}
                             onAdd={handleAdd}
                             onDelete={handleDelete}
-                            label = "Search Tags"
+                            label = "Search Location"
                             variant='outlined'
                         />
                         <Button onClick={searchPost} className={classes.searchButton} variant="contained" color="primary">Search</Button>

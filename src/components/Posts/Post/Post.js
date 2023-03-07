@@ -57,20 +57,20 @@ const Post = ( { post, setCurrentId } ) => {
                 {(user?.result?.sub === post?.creator || user?.result?._id === post?.creator) && (
                 <div className={classes.overlay2}>
                     <Button 
-                        style={{color: "white"}} 
-                        size="small" 
                         onClick={(e) => {
-                            setCurrentId(post._id);
+                            setCurrentId(post?._id);
                             e.stopPropagation();
                         }}
-                        >
+                        style={{color: "white"}} 
+                        size="small" 
+                    >
                         <MoreHorizIcon fontSize="default"/>
                     </Button>
                 </div>
                 )}
                 <div className={classes.details}>
                     <Typography variant="body2" color="textSecondary">{post.tags.map((tag) => `#${tag} `)}</Typography>
-                    <Typography variant="body2" style={{color: '#77dd77'}} color="textSecondary">{post.locations.map((location) => `#${location} `)}</Typography>
+                    {/* <Typography variant="body2" style={{color: '#77dd77'}} color="textSecondary">{post.locations.map((location) => `#${location} `)}</Typography> */}
                 </div>
                 <Typography className={classes.title} variant="h5" gutterBottom>{post.title}</Typography>
                 <CardContent>
